@@ -13,22 +13,22 @@ export class NpsComponent {
     map(({ matches }) => {
       if (matches) {
         return [
-          { title: '10/10/2018', cols: 1, rows: 1 },
-          { title: '10/10/2018', cols: 1, rows: 1 },
-          { title: '10/10/2018', cols: 1, rows: 1 },
-          { title: '10/10/2018', cols: 1, rows: 1 },
-          { title: '10/10/2018', cols: 1, rows: 1 },
-          { title: '10/10/2018', cols: 1, rows: 1 },
+          { title: 'Card 1', cols: 1, rows: 1 },
+          { title: 'Card 2', cols: 1, rows: 1 },
+          { title: 'Card 3', cols: 1, rows: 1 },
+          { title: 'Card 4', cols: 1, rows: 1 },
+          { title: 'Card 5', cols: 1, rows: 1 },
+          { title: 'Card 6', cols: 1, rows: 1 },
         ];
       }
 
       return [
-        { title: '10/10/2018', cols: 1, rows: 1 },
-        { title: '10/10/2018', cols: 1, rows: 1 },
-        { title: '10/10/2018', cols: 1, rows: 1 },
-        { title: '10/10/2018', cols: 1, rows: 1 },
-        { title: '10/10/2018', cols: 1, rows: 1 },
-        { title: '10/10/2018', cols: 1, rows: 1 },
+        { title: 'Card 1', cols: 1, rows: 1 },
+        { title: 'Card 2', cols: 1, rows: 1 },
+        { title: 'Card 3', cols: 1, rows: 1 },
+        { title: 'Card 4', cols: 1, rows: 1 },
+        { title: 'Card 5', cols: 1, rows: 1 },
+        { title: 'Card 6', cols: 1, rows: 1 },
       ];
     })
   );

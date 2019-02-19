@@ -7,7 +7,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FirebaseUserModel } from '../../core/user.model';
 
 @Component({
-  selector: 'app-page-user',
+  selector: 'app-user',
   templateUrl: 'user.component.html'
 
 })
@@ -27,6 +27,7 @@ export class UserComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log(this.route.snapshot.queryParamMap.get('numeroAverbacao'));
     this.route.data.subscribe(routeData => {
       const data = routeData['data'];
       if (data) {

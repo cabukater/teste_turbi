@@ -1,6 +1,6 @@
 <div class="grid-container">
-
-  <mat-grid-list cols="2" rowHeight="350px">
+  <h1 class="mat-h1">Dashboard</h1>
+  <mat-grid-list cols="4" rowHeight="350px">
     <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
       <mat-card class="dashboard-card">
         <mat-card-header>
@@ -16,27 +16,9 @@
           </mat-card-title>
         </mat-card-header>
         <mat-card-content class="dashboard-card-content">
-          <mat-grid-list cols="5" rowHeight="2:1">
-              <mat-grid-tile><i class="far "></i>
-                <h4>11</h4>
-              </mat-grid-tile>
-           <mat-grid-tile> <i class="far fa-angry"></i>
-              <h4>11</h4>
-            </mat-grid-tile>
-            <mat-grid-tile> <i class="far fa-meh"></i>
-              <h4>11</h4>
-            </mat-grid-tile>
-            <mat-grid-tile>
-              <i class="far fa-smile"></i>
-              <h4>11</h4>
-            </mat-grid-tile>
-            <mat-grid-tile>
-                <i class="far fa-grin-beam"></i>
-                <h4>11</h4>
-              </mat-grid-tile>
-           
-          </mat-grid-list>
+          <div>
 
+          </div>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
