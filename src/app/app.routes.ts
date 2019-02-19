@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
 
 import { LoginComponent } from './login/login.component';
-import { UserComponent } from './user/user.component';
-import { RegisterComponent } from './register/register.component';
-import { UserResolver } from './user/user.resolver';
+import { UserComponent } from './components/user/user.component';
+import { RegisterComponent } from './components/register/register.component';
+import { UserResolver } from './components/user/user.resolver';
 import { AuthGuard } from './core/auth.guard';
-import { NpsComponent } from './nps/nps.component';
+import { NpsComponent } from './components/nps/nps.component';
 
 
 export const rootRouterConfig: Routes = [
