@@ -19,9 +19,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 import { AppComponent } from './app.component';
-import { MyDashboardComponent } from './my-dashboard/my-dashboard.component';
 import { MatGridListModule, MatCardModule, MatMenuModule, MatIconModule, MatButtonModule } from '@angular/material';
 import { LayoutModule } from '@angular/cdk/layout';
+import { NpsComponent } from './nps/nps.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,7 @@ import { LayoutModule } from '@angular/cdk/layout';
     LoginComponent,
     UserComponent,
     RegisterComponent,
-    MyDashboardComponent
+    NpsComponent
   ],
   imports: [
     BrowserModule,
