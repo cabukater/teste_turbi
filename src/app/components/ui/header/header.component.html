@@ -1,6 +1,15 @@
-<mat-toolbar color="grey">
-  <div class="grid-container">
+<mat-toolbar>
+
+  
     <img src="../assets/logo-turbi.png">
-  </div>
-  <app-user></app-user>
+
+    <div class="box-user">
+        <img  [src]="user.photoURL" alt="usuario" class="user">
+        <span class="card-title">{{user.displayName}}</span>
+        <button mat-raised-button  (click)="logout()" color="warn"><mat-icon>logout</mat-icon> Sair</button>
+
+      </div>
+
+      
+
 </mat-toolbar>
