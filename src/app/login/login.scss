@@ -11,3 +11,21 @@
 .error{
   color: red;
 }
+
+.center{
+  width: 35%;
+  margin: 10px auto;
+}
+
+.main-div{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mat-card{
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px
+}
