@@ -3,7 +3,7 @@ import { Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { UserResolver } from './components/user/user.resolver';
-import { AuthGuard } from './core/auth.guard';
+import { AuthGuard } from './services/auth.guard';
 import { NpsComponent } from './components/nps/nps.component';
 
 

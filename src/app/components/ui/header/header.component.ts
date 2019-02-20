@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../../core/user.service';
-import { AuthService } from '../../../core/auth.service';
+import { UserService } from '../../../services/user.service';
+import { AuthService } from '../../../services/auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -15,7 +15,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 export class HeaderComponent implements OnInit {
   user: FirebaseUserModel = new FirebaseUserModel();
   profileForm: FormGroup;
-  boxUser: false;
+  boxUser =  false;
 
   constructor(
     public userService: UserService,

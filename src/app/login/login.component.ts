@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../core/auth.service';
+import { AuthService } from '../services/auth.service';
 import { Router, Params } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'page-login',
+  selector: 'app-page-login',
   templateUrl: 'login.component.html',
   styleUrls: ['login.scss']
 })

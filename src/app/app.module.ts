@@ -11,9 +11,9 @@ import { LoginComponent } from './login/login.component';
 import { UserComponent } from './components/user/user.component';
 import { RegisterComponent } from './components/register/register.component';
 import { UserResolver } from './components/user/user.resolver';
-import { AuthGuard } from './core/auth.guard';
-import { AuthService } from './core/auth.service';
-import { UserService } from './core/user.service';
+import { AuthGuard } from './services/auth.guard';
+import { AuthService } from './services/auth.service';
+import { UserService } from './services/user.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -56,7 +56,7 @@ import { ExcelService } from './services/excel.service';
     BrowserAnimationsModule,
     AngularFireAuthModule,
     MatGridListModule,
-    MatCardModule,    
+    MatCardModule,
     MatTableModule,
     MatMenuModule,
     MatIconModule,
