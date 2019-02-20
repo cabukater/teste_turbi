@@ -33,6 +33,7 @@ import { NpsComponent } from './components/nps/nps.component';
 import { HeaderComponent } from './components/ui/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NpsService } from './services/nps.service';
+import { ExcelService } from './services/excel.service';
 
 @NgModule({
   declarations: [
@@ -55,14 +56,19 @@ import { NpsService } from './services/nps.service';
     BrowserAnimationsModule,
     AngularFireAuthModule,
     MatGridListModule,
-    MatCardModule,
+    MatCardModule,    
     MatTableModule,
     MatMenuModule,
     MatIconModule,
     MatButtonModule,
     LayoutModule
   ],
-  providers: [AuthService, NpsService, UserService, UserResolver, AuthGuard],
+  providers: [AuthService,
+     NpsService,
+     ExcelService,
+      UserService,
+      UserResolver,
+       AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

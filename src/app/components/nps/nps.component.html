@@ -1,6 +1,108 @@
-<div class="grid-container">
 
-  <mat-grid-list cols="3" >
+<div class="grid-container">
+    <mat-card class="box-buttons">
+      <mat-card-actions>
+         <button mat-raised-button class="download-button" (click)="exportAsXLSX()"><mat-icon>assignment_returned</mat-icon> Baixar arquivo</button>
+         <button mat-raised-button class="view-button"><mat-icon>view_module</mat-icon> Visualizar em cards</button>
+      </mat-card-actions>
+  </mat-card>
+  <mat-card class="box-buttons">
+      <mat-card-content>
+  <table mat-table [dataSource]="nps" class="mat-elevation-z8">
+   <ng-container matColumnDef="data" sticky>
+      <th mat-header-cell *matHeaderCellDef> Data </th>
+      <td mat-cell *matCellDef="let element"> <b>
+          {{element.ratingDate | date:'dd/MM/yyyy'}}
+        </b></td>
+    </ng-container>
+    <ng-container matColumnDef="rate1" sticky>
+      <th mat-header-cell *matHeaderCellDef> Rate1 </th>
+      <td mat-cell *matCellDef="let element">
+        {{element.rate1 }}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="rate2" sticky>
+      <th mat-header-cell *matHeaderCellDef> Rate2 </th>
+      <td mat-cell *matCellDef="let element">
+        {{element.rate2 }}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="rate3" sticky>
+      <th mat-header-cell *matHeaderCellDef> Rate3 </th>
+      <td mat-cell *matCellDef="let element"> <b>
+          {{element.rate3 }}
+        </b></td>
+    </ng-container>
+    <ng-container matColumnDef="rate4" sticky>
+      <th mat-header-cell *matHeaderCellDef> Rate4 </th>
+      <td mat-cell *matCellDef="let element"> <b>
+          {{element.rate4 }}
+        </b></td>
+    </ng-container>
+    <ng-container matColumnDef="rate5" sticky>
+      <th mat-header-cell *matHeaderCellDef> Rate5 </th>
+      <td mat-cell *matCellDef="let element">
+        {{element.rate5 }}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="nps" sticky>
+      <th mat-header-cell *matHeaderCellDef> Nps </th>
+      <td mat-cell *matCellDef="let element"> {{element.nps}} </td>
+    </ng-container>
+    <ng-container matColumnDef="detractor" sticky>
+      <th mat-header-cell *matHeaderCellDef> detractor </th>
+      <td mat-cell *matCellDef="let element"> {{element.detractor}} </td>
+    </ng-container>
+    <ng-container matColumnDef="promoter" sticky>
+      <th mat-header-cell *matHeaderCellDef> Promoter </th>
+      <td mat-cell *matCellDef="let element"> {{element.promoter}} </td>
+    </ng-container>
+    <ng-container matColumnDef="reserva" sticky>
+      <th mat-header-cell *matHeaderCellDef> Reserva </th>
+      <td mat-cell *matCellDef="let element"> {{element.Reserva}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="abertura" sticky>
+      <th mat-header-cell *matHeaderCellDef> Abertura </th>
+      <td mat-cell *matCellDef="let element"> {{element.Abertura}} </td>
+    </ng-container>
+    <ng-container matColumnDef="finalizar" sticky>
+      <th mat-header-cell *matHeaderCellDef> Finalizar </th>
+      <td mat-cell *matCellDef="let element"> {{element.Finalizar}} </td>
+    </ng-container>
+    <ng-container matColumnDef="veiculo" sticky>
+      <th mat-header-cell *matHeaderCellDef> Veiculo Sujo </th>
+      <td mat-cell *matCellDef="let element"> {{element.VeiculoSujo}} </td>
+    </ng-container>
+    <ng-container matColumnDef="abastecimento" sticky>
+      <th mat-header-cell *matHeaderCellDef> Abastecimento </th>
+      <td mat-cell *matCellDef="let element"> {{element.Abastecimento}} </td>
+    </ng-container>
+    <ng-container matColumnDef="cheiro" sticky>
+      <th mat-header-cell *matHeaderCellDef> Cheiro de Cigarro </th>
+      <td mat-cell *matCellDef="let element"> {{element.CheiroCigarro}} </td>
+    </ng-container>
+    <ng-container matColumnDef="vaga" sticky>
+      <th mat-header-cell *matHeaderCellDef> Vaga Ruim</th>
+      <td mat-cell *matCellDef="let element"> {{element.VagaRuim}} </td>
+    </ng-container>
+    <ng-container matColumnDef="outro" sticky>
+      <th mat-header-cell *matHeaderCellDef> Outro</th>
+      <td mat-cell *matCellDef="let element"> {{element.Outro}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  </mat-card-content>
+  </mat-card>
+
+</div>
+<!--
+    <mat-grid-list cols="3" >
     <mat-grid-tile *ngFor="let nps of nps" >
       <mat-card class="dashboard-card">
         <mat-card-header>
@@ -56,63 +158,4 @@
       </mat-card>
     </mat-grid-tile>
   </mat-grid-list>
-  <table mat-table [dataSource]="nps" class="mat-elevation-z8">
-      <ng-container matColumnDef="data" sticky>
-          <th mat-header-cell *matHeaderCellDef > Data </th>
-          <td mat-cell *matCellDef="let element"> <b>
-            {{element.ratingDate | date:'dd/MM/yyyy'}}
-          </b></td>
-        </ng-container>
-      <ng-container matColumnDef="nps" sticky>
-        <th mat-header-cell *matHeaderCellDef > Nps </th>
-        <td mat-cell *matCellDef="let element"> {{element.nps}} </td>
-      </ng-container>
-      <ng-container matColumnDef="detractor" sticky>
-          <th mat-header-cell *matHeaderCellDef> detractor </th>
-          <td mat-cell *matCellDef="let element"> {{element.detractor}} </td>
-        </ng-container>
-        <ng-container matColumnDef="promoter" sticky>
-            <th mat-header-cell *matHeaderCellDef > Promoter </th>
-            <td mat-cell *matCellDef="let element"> {{element.promoter}} </td>
-          </ng-container>
-          <ng-container matColumnDef="reserva" sticky>
-              <th mat-header-cell *matHeaderCellDef> Reserva </th>
-              <td mat-cell *matCellDef="let element"> {{element.reserva}} </td>
-            </ng-container>
-            <ng-container matColumnDef="abastecimento" sticky>
-                <th mat-header-cell *matHeaderCellDef> Abastecimento </th>
-                <td mat-cell *matCellDef="let element"> {{element.Abastecimento}} </td>
-              </ng-container>
-            <ng-container matColumnDef="abertura" sticky>
-                <th mat-header-cell *matHeaderCellDef> Abertura </th>
-                <td mat-cell *matCellDef="let element"> {{element.Abertura}} </td>
-              </ng-container>
-              <ng-container matColumnDef="finalizar" sticky>
-                  <th mat-header-cell *matHeaderCellDef > Finalizar </th>
-                  <td mat-cell *matCellDef="let element"> {{element.Finalizar}} </td>
-                </ng-container>
-                <ng-container matColumnDef="veiculo" sticky >
-                    <th mat-header-cell *matHeaderCellDef> Veiculo Sujo </th>
-                    <td mat-cell *matCellDef="let element"> {{element.VeiculoSujo}} </td>
-                  </ng-container>
-                  <ng-container matColumnDef="cheiro" sticky>
-                      <th mat-header-cell *matHeaderCellDef> Cheiro de Cigarro </th>
-                      <td mat-cell *matCellDef="let element"> {{element.CheiroCigarro}} </td>
-                    </ng-container>
-                    <ng-container matColumnDef="vaga" sticky>
-                        <th mat-header-cell *matHeaderCellDef> Vaga Ruim</th>
-                        <td mat-cell *matCellDef="let element"> {{element.VagaRuim}} </td>
-                      </ng-container>
-                      <ng-container matColumnDef="outro" sticky>
-                          <th mat-header-cell *matHeaderCellDef> Outro</th>
-                          <td mat-cell *matCellDef="let element"> {{element.Outro}} </td>
-                        </ng-container>
-      
-      <!-- Name Column -->
-      
-    
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
-    
-</div>
+-->

@@ -1,18 +1,25 @@
-import { Component, OnInit } from "@angular/core";
-import { map } from "rxjs/operators";
-import { Breakpoints, BreakpointObserver } from "@angular/cdk/layout";
-import { NpsService } from "../../services/nps.service";
-import { Nps } from "../../models/nps/nps.model";
-import { Observable } from "rxjs/internal/Observable";
+import { Component, OnInit } from '@angular/core';
+import { map } from 'rxjs/operators';
+import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
+import { NpsService } from '../../services/nps.service';
+import { Nps } from '../../models/nps/nps.model';
+import { Observable } from 'rxjs/internal/Observable';
+import { ExcelService } from '../../services/excel.service';
 
 @Component({
-  selector: "app-nps",
+  selector: 'app-nps',
   templateUrl: './nps.component.html',
   styleUrls: ['./nps.component.scss']
 })
 export class NpsComponent implements OnInit {
   displayedColumns: string[] = [
     'data',
+    'rate1',
+    'rate2',
+    'rate3',
+    'rate4',
+    'rate5',
+
     'nps',
     'promoter',
     'detractor',
@@ -31,7 +38,9 @@ export class NpsComponent implements OnInit {
 
   /** Based on the screen size, switch from standard to one column per row */
 
-  constructor(private npsService: NpsService) {
+  constructor(
+    private excelService: ExcelService,
+    private npsService: NpsService) {
     this.getNps();
     console.log(this.nps);
   }
@@ -44,4 +53,8 @@ export class NpsComponent implements OnInit {
       this.nps = data;
     });
   }
+
+  exportAsXLSX(): void {
+    this.excelService.exportAsExcelFile( this.nps, 'sample');
+ }
 }
