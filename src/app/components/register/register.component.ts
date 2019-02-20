@@ -32,7 +32,7 @@ export class RegisterComponent {
     tryGoogleLogin() {
      this.authService.doGoogleLogin()
      .then(res => {
-       this.router.navigate(['/user']);
+       this.router.navigate(['/nps']);
      }, err => console.log(err)
      );
    }

@@ -10,16 +10,16 @@ export class UserService {
   constructor(
    public db: AngularFirestore,
    public afAuth: AngularFireAuth
- ){
- }
+ ){}
 
 
   getCurrentUser() {
     return new Promise<any>((resolve, reject) => {
-      const user = firebase.auth().onAuthStateChanged(function(user){
+      const user = firebase.auth().onAuthStateChanged((user) => {
         if (user) {
           resolve(user);
           console.log(user);
+     
         } else {
           reject('No user logged in');
         }

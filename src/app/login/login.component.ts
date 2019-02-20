@@ -33,14 +33,14 @@ export class LoginComponent {
   tryGoogleLogin() {
     this.authService.doGoogleLogin()
     .then(res => {
-      this.router.navigate(['/my-dashboard.component']);
+      this.router.navigate(['/nps']);
     });
   }
 
   tryLogin(value) {
     this.authService.doLogin(value)
     .then(res => {
-      this.router.navigate(['/my-dashboard.component']);
+      this.router.navigate(['/nps']);
     }, err => {
       console.log(err);
       this.errorMessage = err.message;
