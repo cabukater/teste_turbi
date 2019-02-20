@@ -23,6 +23,6 @@ npm install e só instalar tudo
 
 ## Melhorias:
 
-Penso em um botão lateral ao lado do baixar em xls onde o usuario consiga visualizar essa tabela em formato de cards, e um filtro de dados na tabela.
+Sugiro em um botão lateral ao lado do baixar em xls (lateral direito) onde o usuario consiga visualizar essa tabela em formato de cards, e um filtro de dados na tabela.
 
 
