@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { NpsService } from '../../services/nps.service';
-import { Nps } from '../../models/nps/nps.model';
+import { Nps } from '../../core/nps.model';
 import { Observable } from 'rxjs/internal/Observable';
 import { ExcelService } from '../../services/excel.service';
 
@@ -33,7 +33,7 @@ export class NpsComponent implements OnInit {
     'outro'
   ];
 
-  nps: Nps;
+  nps: Nps ;
   dataSource = this.nps;
 
   /** Based on the screen size, switch from standard to one column per row */
@@ -42,7 +42,7 @@ export class NpsComponent implements OnInit {
     private excelService: ExcelService,
     private npsService: NpsService) {
     this.getNps();
-    console.log(this.nps);
+
   }
 
   ngOnInit(): void {
@@ -50,11 +50,13 @@ export class NpsComponent implements OnInit {
   }
   getNps() {
     this.npsService.listNps().subscribe(data => {
-      this.nps = data;
+      return this.nps = data;
     });
+
   }
 
-  exportAsXLSX(): void {
-    this.excelService.exportAsExcelFile( this.nps, 'sample');
+  exportAsXLSX(nps): void {
+    this.excelService.exportAsExcelFile (
+    nps, 'sample');
  }
 }
