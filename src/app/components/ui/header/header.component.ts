@@ -29,7 +29,7 @@ export class HeaderComponent implements OnInit {
     this.afAuth.auth.onAuthStateChanged(user => {
       if (user) {
         this.boxUser = true;
-      return user = user;
+       this.newMethod(user);
 
       } else {
        this.boxUser = false;
@@ -37,6 +37,10 @@ export class HeaderComponent implements OnInit {
     });
   }
 
+
+  private newMethod(user) {
+    this.user = user;
+  }
 
   logout() {
     this.authService.doLogout().then(

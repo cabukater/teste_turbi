@@ -56,6 +56,7 @@ export class NpsComponent implements OnInit {
   }
 
   exportAsXLSX(nps): void {
+    nps = this.nps;
     this.excelService.exportAsExcelFile (
     nps, 'sample');
  }
