@@ -57,7 +57,12 @@
     </mat-grid-tile>
   </mat-grid-list>
   <table mat-table [dataSource]="nps" class="mat-elevation-z8">
-
+      <ng-container matColumnDef="data" sticky>
+          <th mat-header-cell *matHeaderCellDef > Data </th>
+          <td mat-cell *matCellDef="let element"> <b>
+            {{element.ratingDate | date:'dd/MM/yyyy'}}
+          </b></td>
+        </ng-container>
       <ng-container matColumnDef="nps" sticky>
         <th mat-header-cell *matHeaderCellDef > Nps </th>
         <td mat-cell *matCellDef="let element"> {{element.nps}} </td>

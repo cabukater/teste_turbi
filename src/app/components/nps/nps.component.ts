@@ -12,6 +12,7 @@ import { Observable } from "rxjs/internal/Observable";
 })
 export class NpsComponent implements OnInit {
   displayedColumns: string[] = [
+    'data',
     'nps',
     'promoter',
     'detractor',
