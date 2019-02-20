@@ -1,11 +1,11 @@
 <div class="grid-container">
 
-  <mat-grid-list cols="2" rowHeight="350px">
-    <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
+  <mat-grid-list cols="3" >
+    <mat-grid-tile *ngFor="let nps of nps" >
       <mat-card class="dashboard-card">
         <mat-card-header>
           <mat-card-title>
-            {{card.title}}
+            {{nps.ratingDate | date:'dd/MM/yyyy'}}
             <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
               <mat-icon>more_vert</mat-icon>
             </button>
@@ -17,28 +17,97 @@
         </mat-card-header>
         <mat-card-content class="dashboard-card-content">
           <mat-grid-list cols="5" rowHeight="2:1">
-              <mat-grid-tile><i class="far "></i>
-                <h4>11</h4>
+              <mat-grid-tile><i class="far fa-angry "></i>
+                <h4>{{nps.rate1}}</h4>
               </mat-grid-tile>
-           <mat-grid-tile> <i class="far fa-angry"></i>
-              <h4>11</h4>
-            </mat-grid-tile>
+           <mat-grid-tile><i class="far fa-frown"></i>
+            <h4>{{nps.rate2}}</h4>            </mat-grid-tile>
             <mat-grid-tile> <i class="far fa-meh"></i>
-              <h4>11</h4>
+              <h4>{{nps.rate3}}</h4>
             </mat-grid-tile>
             <mat-grid-tile>
               <i class="far fa-smile"></i>
-              <h4>11</h4>
+              <h4>{{nps.rate4}}</h4>
             </mat-grid-tile>
             <mat-grid-tile>
                 <i class="far fa-grin-beam"></i>
-                <h4>11</h4>
+                <h4>{{nps.rate5}}</h4>
               </mat-grid-tile>
            
           </mat-grid-list>
+
+  
+            
+          <mat-list>
+              <mat-list-item>Detractor {{nps.detractor}} </mat-list-item>
+              <mat-list-item> Promoter {{nps.promoter }}</mat-list-item>
+              <mat-list-item>NPS {{ nps.nps }}</mat-list-item>
+              <mat-list-item>Reserva {{nps.Reserva }}</mat-list-item>
+              <mat-list-item>Abertura {{ nps.Abertura}} </mat-list-item>
+              <mat-list-item>Finalizar {{ nps.Finalizar }}</mat-list-item>
+              <mat-list-item> Veiculo Sujo{{nps.VeiculoSujo }}</mat-list-item>
+              <mat-list-item>Abastecimento{{nps. Abastecimento}} </mat-list-item>
+              <mat-list-item>Cheiro de Cigarro {{ nps.CheiroCigarro }}</mat-list-item>
+              <mat-list-item> Vaga Ruim {{nps.VagaRuim}} </mat-list-item>
+              <mat-list-item>Outro {{ nps.Outro}} </mat-list-item>
+             </mat-list>
 
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
   </mat-grid-list>
+  <table mat-table [dataSource]="nps" class="mat-elevation-z8">
+
+      <ng-container matColumnDef="nps" sticky>
+        <th mat-header-cell *matHeaderCellDef > Nps </th>
+        <td mat-cell *matCellDef="let element"> {{element.nps}} </td>
+      </ng-container>
+      <ng-container matColumnDef="detractor" sticky>
+          <th mat-header-cell *matHeaderCellDef> detractor </th>
+          <td mat-cell *matCellDef="let element"> {{element.detractor}} </td>
+        </ng-container>
+        <ng-container matColumnDef="promoter" sticky>
+            <th mat-header-cell *matHeaderCellDef > Promoter </th>
+            <td mat-cell *matCellDef="let element"> {{element.promoter}} </td>
+          </ng-container>
+          <ng-container matColumnDef="reserva" sticky>
+              <th mat-header-cell *matHeaderCellDef> Reserva </th>
+              <td mat-cell *matCellDef="let element"> {{element.reserva}} </td>
+            </ng-container>
+            <ng-container matColumnDef="abastecimento" sticky>
+                <th mat-header-cell *matHeaderCellDef> Abastecimento </th>
+                <td mat-cell *matCellDef="let element"> {{element.Abastecimento}} </td>
+              </ng-container>
+            <ng-container matColumnDef="abertura" sticky>
+                <th mat-header-cell *matHeaderCellDef> Abertura </th>
+                <td mat-cell *matCellDef="let element"> {{element.Abertura}} </td>
+              </ng-container>
+              <ng-container matColumnDef="finalizar" sticky>
+                  <th mat-header-cell *matHeaderCellDef > Finalizar </th>
+                  <td mat-cell *matCellDef="let element"> {{element.Finalizar}} </td>
+                </ng-container>
+                <ng-container matColumnDef="veiculo" sticky >
+                    <th mat-header-cell *matHeaderCellDef> Veiculo Sujo </th>
+                    <td mat-cell *matCellDef="let element"> {{element.VeiculoSujo}} </td>
+                  </ng-container>
+                  <ng-container matColumnDef="cheiro" sticky>
+                      <th mat-header-cell *matHeaderCellDef> Cheiro de Cigarro </th>
+                      <td mat-cell *matCellDef="let element"> {{element.CheiroCigarro}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="vaga" sticky>
+                        <th mat-header-cell *matHeaderCellDef> Vaga Ruim</th>
+                        <td mat-cell *matCellDef="let element"> {{element.VagaRuim}} </td>
+                      </ng-container>
+                      <ng-container matColumnDef="outro" sticky>
+                          <th mat-header-cell *matHeaderCellDef> Outro</th>
+                          <td mat-cell *matCellDef="let element"> {{element.Outro}} </td>
+                        </ng-container>
+      
+      <!-- Name Column -->
+      
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    
 </div>

@@ -15,14 +15,24 @@ import { AuthGuard } from './core/auth.guard';
 import { AuthService } from './core/auth.service';
 import { UserService } from './core/user.service';
 import { ReactiveFormsModule } from '@angular/forms';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
+import { MatListModule } from '@angular/material/list';
 import { AppComponent } from './app.component';
-import { MatGridListModule, MatCardModule, MatMenuModule, MatIconModule, MatButtonModule, MatToolbarModule } from '@angular/material';
+import {
+  MatGridListModule,
+  MatCardModule,
+  MatMenuModule,
+  MatIconModule,
+  MatButtonModule,
+  MatToolbarModule,
+  MatTableModule
+} from '@angular/material';
 import { LayoutModule } from '@angular/cdk/layout';
 import { NpsComponent } from './components/nps/nps.component';
 import { HeaderComponent } from './components/ui/header/header.component';
+import { HttpClientModule } from '@angular/common/http';
+import { NpsService } from './services/nps.service';
 
 @NgModule({
   declarations: [
@@ -35,6 +45,8 @@ import { HeaderComponent } from './components/ui/header/header.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    MatListModule,
     MatToolbarModule,
     ReactiveFormsModule,
     RouterModule.forRoot(rootRouterConfig, { useHash: false }),
@@ -44,12 +56,13 @@ import { HeaderComponent } from './components/ui/header/header.component';
     AngularFireAuthModule,
     MatGridListModule,
     MatCardModule,
+    MatTableModule,
     MatMenuModule,
     MatIconModule,
     MatButtonModule,
-    LayoutModule,
+    LayoutModule
   ],
-  providers: [AuthService, UserService, UserResolver, AuthGuard],
+  providers: [AuthService, NpsService, UserService, UserResolver, AuthGuard],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
